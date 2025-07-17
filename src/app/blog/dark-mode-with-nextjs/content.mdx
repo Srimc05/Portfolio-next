@@ -1,0 +1,191 @@
+import { BlogLayout } from "@/components/BlogLayout";
+
+export const meta = {
+
+  date: "2025-07-08",
+  title: "Understanding Time Complexity of an Algorithm",
+  description: `Learn what time complexity means, why it matters, and how to analyze it to write efficient algorithms.`,
+  image:
+    "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=987&q=80",
+  tags: ["algorithm", "time-complexity", "dsalgo"],
+
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+
+
+```
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Dark Mode Toggle</title>
+      </head>
+      <body>
+        <div class="container mx-auto py-4">
+          <h1 class="text-4xl font-bold mb-4">Welcome to my Dark Mode Toggle!</h1>
+          <p class="text-lg">Click the button below to switch between light and dark mode.</p>
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Toggle Theme
+          </button>
+        </div>
+      </body>
+    </html>
+```
+
+We can then add some basic styling to our application using Tailwind CSS. We can do this by creating a new file called `styles.css` in the `styles` directory of our project.
+
+In this file, we can add the following code to apply some basic styles to our application:
+
+```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    body {
+      background-color: #f7fafc;
+    .container {
+      max-width: 800px;
+```
+
+## Implementing the Dark Mode Toggle
+
+Now that our basic application structure and styling are complete, we can move on to implementing the dark mode toggle functionality.
+
+To do this, we need to create a state variable to track the user's preferred theme. We can do this by adding the following code to our `index.js` file:
+
+```
+    import { useState from "react";
+
+    export default function Home() {
+      const [theme, setTheme] = useState("light");
+
+      return (
+        <div className={theme === "light" ? "bg-white" : "bg-gray-800      <div className="container mx-auto py-4">
+            <h1 className="text-4xl font-bold mb-4">Welcome to my Dark Mode Toggle!</h1>
+            <p className="text-lg">Click the button below to switch between light and dark mode.</p>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light        >
+              Toggle Theme
+            </button>
+          </div>
+        </div>
+      );
+```
+
+In this code, we are using the `useState` hook from React to create a state variable called `theme`. The default value of `theme` is set to `"light"`.
+
+We are also using a ternary operator to conditionally apply a background color to our application based on the user's preferred theme. If the user has selected the light theme, we apply a white background color. If the user has selected the dark theme, we apply a dark gray background color.
+
+We are also using an `onClick` event handler to toggle the user's preferred theme between light and dark.
+
+## Improving the User Experience
+
+Now that we have implemented the basic functionality of our dark mode toggle, we can improve the user experience by adding some additional features.
+
+First, we can persist the user's theme preference using localStorage. We can do this by adding the following code to our `index.js` file:
+
+```
+    import { useEffect, useState from "react";
+
+    export default function Home() {
+      const [theme, setTheme] = useState("light");
+
+      useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+         []);
+
+      useEffect(() => {
+        localStorage.setItem("theme", theme);
+      [theme]);
+
+      return (
+        <div className={theme === "light" ? "bg-white" : "bg-gray-800      <div className="container mx-auto py-4">
+            <h1 className="text-4xl font-bold mb-4">Welcome to my Dark Mode Toggle!</h1>
+            <p className="text-lg">Click the button below to switch between light and dark mode.</p>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light        >
+              Toggle Theme
+            </button>
+          </div>
+        </div>
+      );
+```
+
+In this code, we are using the `useEffect` hook from React to load the user's preferred theme from localStorage when the component mounts. We are also using another `useEffect` hook to save the user's preferred theme to localStorage whenever it changes.
+
+Next, we can add some animations to our toggle button to enhance user feedback. We can do this by adding the following code to our `styles.css` file:
+
+```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    body {
+      background-color: #f7fafc;
+    .container {
+      max-width: 800px;
+    .theme-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+    .theme-toggle-button {
+      width: 60px;
+      height: 30px;
+      border-radius: 15px;
+      position: relative;
+    .theme-toggle-button::before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: ${({ theme => (theme === "light" ? "0" : "30px")  transition: all .2s ease-in-out;
+    .theme-toggle-button::after {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #000;
+      position: absolute;
+      top: 0;
+      right: ${({ theme => (theme === "light" ? "0" : "30px")  transition: all .2s ease-in-out;
+    .theme-toggle-button:hover::before {
+      transform: scale(1.2);
+    .theme-toggle-button:hover::after {
+      transform: scale(1.2);
+```
+
+In this code, we are using CSS to create a toggle button with two states - light and dark. We are also using CSS transitions to animate the button when it is hovered over.
+
+Finally, we can implement a media query to automatically switch between light and dark themes based on the user's device settings. We can do this by adding the following code to our `styles.css` file:
+
+```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #1a202c;
+       .text-gray-800 {
+        color: #fff;
+       }
+    }
+```
+
+In this code, we are using a media query to check for the user's preferred color scheme. If the user has selected a dark color scheme, we apply a dark background color and change the text color to white.
+
+## Conclusion
+
+**Summary:** We've covered creating a dark mode toggle in Next.js and Tailwind CSS, including project setup, implementing toggle functionality, enhancing UX with localStorage and animations, and auto-switching themes based on device settings.
+
+By implementing a dark mode toggle in your web application, you can improve the user experience and stay up-to-date with current design trends. With Next.js and Tailwind CSS, creating a dark mode toggle is quick and easy.
+
+If you want to further customize and improve the toggle functionality, you can explore the documentation for Next.js and Tailwind CSS to learn more about their capabilities.
