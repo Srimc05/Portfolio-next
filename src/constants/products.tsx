@@ -1,11 +1,7 @@
-import sidefolioAceternity from "public/images/sidefolio-aceternity-2.png";
+import sidefolioAceternity from "public/images/sidefolio-aceternity.png";
 import sidefolioAceternity2 from "public/images/sidefolio-aceternity-2.png";
 import sidefolioAlgochurn from "public/images/sidefolio-algochurn.png";
-import sidefolioAlgochurn2 from "public/images/sidefolio-algochurn.png";
-import sidefolioMoonbeam from "public/images/sidefolio-moonbeam.png";
-import sidefolioMoonbeam2 from "public/images/sidefolio-moonbeam-2.png";
-import sidefolioTailwindMasterKit from "public/images/sidefolio-tailwindmasterkit.png";
-import sidefolioTailwindMasterKit2 from "public/images/sidefolio-tailwindmasterkit-2.png";
+import sidefolioAlgochurn2 from "public/images/sidefolio-algochurn-2.png";
 
 export const products = [
   {
@@ -13,7 +9,7 @@ export const products = [
     title: "NilaChoru Catering Website",
     description:
       "A design and development studio that focuses on building quality apps.",
-    thumbnail: sidefolioAlgochurn2,
+    thumbnail: sidefolioAceternity,
     images: [],
     stack: ["Vite + react", "Tailwindcss"],
     slug: "Nilachoru",
@@ -49,10 +45,10 @@ export const products = [
     title: "HealthEasy",
     description:
       "Practice for technical interviews with hands on coding challenges.",
-    thumbnail: sidefolioAlgochurn,
-    images: [sidefolioAlgochurn, sidefolioAlgochurn2],
+    thumbnail: sidefolioAceternity2,
+    images: [],
     stack: ["Vite+react", "Express"],
-    slug: "algochurn",
+    slug: "Healtheasy",
     content: (
      <div>
   <p><strong>Description:</strong></p>
@@ -83,10 +79,10 @@ export const products = [
     title: "Interactive AI storyteller",
     description:
       "Bored of telling story to Kids, Let AI handle it, You focus on things that matter ",
-    thumbnail: sidefolioMoonbeam,
-    images: [sidefolioMoonbeam, sidefolioMoonbeam2],
+    thumbnail: sidefolioAlgochurn2,
+    images: [],
     stack: ["Streamlit", "Python"],
-    slug: "moonbeam",
+    slug: "Storyteller",
     content: (
     <div>
   <p><strong>Description:</strong></p>
@@ -116,10 +112,10 @@ export const products = [
     title: "Notely App",
     description:
       "A beautiful and comprehensive Tailwind CSS components library for building modern websites and applications.",
-    thumbnail: sidefolioTailwindMasterKit,
-    images: [sidefolioTailwindMasterKit, sidefolioTailwindMasterKit2],
+    thumbnail: sidefolioAlgochurn,
+    images: [],
     stack: ["Flutter", "Firebase"],
-    slug: "tailwindmasterkit",
+    slug: "Notesapp",
     content: (
      <div>
   <p><strong>Description:</strong></p>
